@@ -1,0 +1,27 @@
+.header {
+  border: 1px solid #0000001a;
+  display: flex;
+  width: 277px;
+  height: 30px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 18px;
+  margin-right: 5px;
+}
+
+.more-btn {
+  background-color: transparent;
+  border: none;
+  width: 20px;
+  height: 25px;
+  padding: 6.25px 1.43px 7.81px 1.43px;
+  display: flex;
+  align-items: center;
+  color: #1b80c4;
+}
