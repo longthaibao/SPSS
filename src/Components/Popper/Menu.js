@@ -4,10 +4,11 @@ import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
 function Menu() {
   return (
-    <div className="wrapper">
+    <div className={cx("wrapper")}>
       <Link to={"/changepassword"} className={cx("change-pass")}>
         Đổi mật khẩu
       </Link>
+
       <Link to={"/payment"} className={cx("payment")}>
         Phương thức thanh toán
       </Link>

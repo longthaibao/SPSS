@@ -1,6 +1,12 @@
+import Contents from "../Contents";
 import Header from "../Header";
 function Home() {
-  return <Header currentPage={"Trang chủ"} username={"Thai Bao Long"} />;
+  return (
+    <div>
+      <Header currentPage={"Trang chủ"} username={"Thai Bao Long"} />
+      <Contents />
+    </div>
+  );
 }
 
 export default Home;

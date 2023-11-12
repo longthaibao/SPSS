@@ -1,0 +1,46 @@
+.wrapper {
+  background-color: #d9d9d9;
+  display: flex;
+  justify-content: center;
+}
+
+.main-content {
+  background-color: #ffffff;
+  width: 1180px;
+  height: 824px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.option {
+  display: flex;
+  width: 1047px;
+  height: 397px;
+  justify-content: space-around;
+}
+
+.introduce {
+  width: 778px;
+  height: 63px;
+  text-align: center;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 75px;
+  margin-top: 87px;
+}
+
+img {
+  width: 250px;
+  height: 250px;
+}
+
+.print,
+.history,
+.buy {
+  width: 282px;
+  height: 397px;
+  background-color: transparent;
+  border-top: 1px solid #000;
+  border: 1px solid #1b80c4;
+  border-top: 14px solid #1b80c4;
+}

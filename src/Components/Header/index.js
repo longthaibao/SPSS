@@ -4,10 +4,7 @@ import Popper from "../Popper";
 import SPSSLogo from "~/Components/images/SPSS-logo.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faAngleDoubleRight,
-  faAngleRight,
-} from "@fortawesome/free-solid-svg-icons";
+import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 const cx = classNames.bind(styles);
 function Header({ currentPage, username }) {
   return (
