@@ -1,6 +1,9 @@
 import { useState, useRef } from "react";
 import classNames from "classnames/bind";
 import styles from "./Dropzone.module.scss";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCloudArrowUp } from "@fortawesome/free-solid-svg-icons";
+
 const cx = classNames.bind(styles);
 const Dropzone = () => {
     const [files, setFiles] = useState(null);
@@ -20,26 +23,30 @@ const Dropzone = () => {
       const formData = new FormData();
       formData.append("Files", files);
       console.log(formData.getAll())
-      // fetch(
-      //   "link", {
-      //     method: "POST",
-      //     body: formData
-      //   }  
-      // )
+      fetch(
+        "link", {
+          method: "POST",
+          body: formData
+        }  
+      )
     };
+   
   
     if (files) return (
         <div className={cx("wrapper")}>
       <div className={cx("main-content")}>
+      <div className={cx("introduce")}>
+          TẢI TỆP LÊN
+        </div>
       <div className={cx("uploads")}>
           <ul>
-              {Array.from(files).map((file, idx) => <li key={idx}>{file.name}</li> )}
+              {Array.from(files).map((file, idx) => <li key={idx}>{file.name} - {file.size}</li> )}
           </ul>
-          <div className="actions">
-              <button onClick={() => setFiles(null)}>Cancel</button>
-              <button onClick={handleUpload}>Upload</button>
-          </div>
       </div>
+      <div className={cx("actions")}>
+              <button className={cx("cancel")} onClick={() => setFiles(null)}>HỦY</button>
+              <button className={cx("Upload")} onClick={handleUpload}>XÁC NHẬN</button>
+          </div>
       </div>
       </div>
     )
@@ -47,22 +54,30 @@ const Dropzone = () => {
     return (
       <>  <div className={cx("wrapper")}>
       <div className={cx("main-content")}>
+      <div className={cx("introduce")}>
+          TẢI TỆP LÊN
+        </div>
           <div 
               className={cx("drop")}
               onDragOver={handleDragOver}
               onDrop={handleDrop}
           >
-            <h1>Drag and Drop Files to Upload</h1>
+            <FontAwesomeIcon icon={faCloudArrowUp} className={cx("icon")} />
+            <h1>Drop Your Files Here</h1>
           <h1>Or</h1>
             <input 
               type="file"
               multiple
               onChange={(event) => setFiles(event.target.files)}
               hidden
-              accept="image/png, image/jpeg"
+              accept="application/pdf, 
+              application/vnd.openxmlformats-officedocument.wordprocessingml.document,
+              image/png, 
+              image/jpeg"
               ref={inputRef}
             />
-            <button onClick={() => inputRef.current.click()}>Select Files</button>
+            <button onClick={() => inputRef.current.click()}>Browse from your computer</button>
+            <h3>Maximum size 10MB.</h3>
           </div>
           </div>
           </div>
