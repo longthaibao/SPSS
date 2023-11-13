@@ -30,7 +30,14 @@ const Dropzone = () => {
         }  
       )
     };
-   
+    function formatBytes(bytes) {
+      const sizes = ['Bytes', 'KB', 'MB'];
+    
+      if (bytes === 0) return '0 Byte';
+    
+      const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+      return `${Math.round(bytes / Math.pow(1024, i))} ${sizes[i]}`; 
+    }
   
     if (files) return (
         <div className={cx("wrapper")}>
@@ -40,7 +47,7 @@ const Dropzone = () => {
         </div>
       <div className={cx("uploads")}>
           <ul>
-              {Array.from(files).map((file, idx) => <li key={idx}>{file.name} - {file.size}</li> )}
+              {Array.from(files).map((file, idx) => <li key={idx}>{file.name} - {formatBytes(file.size)}</li> )}
           </ul>
       </div>
       <div className={cx("actions")}>
