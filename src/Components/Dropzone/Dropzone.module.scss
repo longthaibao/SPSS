@@ -1,0 +1,54 @@
+.wrapper {
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .main-content {
+    background-color: #ffffff;
+    width: 1180px;
+    height: 824px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+  * {
+      box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Lato', sans-serif;
+    background-color: white, #f7f7f7;
+  }
+//   h1, h2, h3, h4, h5, h6, p{
+//     letter-spacing: 1px;
+//     text-align: center;
+//   }
+  
+  /* FILE UPLOAD */
+  
+  .drop {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    height: 200px;
+    border: 5px dashed rgb(117, 112, 112);
+    margin-top: 100px;
+  }
+  .uploads {
+    margin-top: 100px;
+  }
+  
+  button {
+    padding: 1rem;
+    margin: 1rem;
+    font-size: medium;
+  }
+  
+  
+ 
+  
