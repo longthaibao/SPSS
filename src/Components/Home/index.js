@@ -10,7 +10,7 @@ function Home() {
       <Header
         className={cx("header")}
         currentPage={"Trang chủ"}
-        username={"Thai Bao Long"}
+        username={"Nguyen Tuan Khanh"}
       />
       <Contents className={cx("content")} />
       <Footer className={cx("footer")} />
