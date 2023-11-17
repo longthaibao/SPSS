@@ -1,6 +1,8 @@
-import styles from "./Confirm.css";
+import styles from "./Confirm.module.scss";
 import classNames from "classnames/bind";
+import { Link } from "react-router-dom";
 const cx = classNames.bind(styles);
+
 function Confirm() {
   return (
     <div className={cx("wrapper")}>
@@ -11,7 +13,7 @@ function Confirm() {
             <div className={cx("minibox")}>
               <p className={cx("ma")}>Thông tin máy in</p>
               <div className={cx("b1_xam")}>
-                <div className={cx("b2_trang tren")}>
+                <div className={cx("b2_trang", "tren")}>
                   <div className={cx("b3")}>
                     <p>+H6.P603</p>
                   </div>
@@ -19,7 +21,7 @@ function Confirm() {
               </div>
               <p className={cx("ma")}>Thông tin máy in</p>
               <div className={cx("b1_xam")}>
-                <div className={cx("b2_trang duoi")}>
+                <div className={cx("b2_trang", "duoi")}>
                   <div className={cx("b3")}>
                     <p>Khổ giấy in: A4</p>
                     <p>Trang in: 2</p>
@@ -31,8 +33,12 @@ function Confirm() {
             </div>
           </div>
         </div>
-        <button className={cx("back bt_trang")}>HỦY</button>
-        <button className={cx("back")}>XÁC NHẬN</button>
+        <button className={cx("back", "bt_trang")}>HỦY</button>
+        <button className={cx("back")}>
+          <Link to={"/sendcode"} className={cx("bt-link")}>
+            XÁC NHẬN
+          </Link>
+        </button>
       </div>
     </div>
   );
