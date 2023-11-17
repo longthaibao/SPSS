@@ -18,6 +18,6 @@
     padding: var(--padding-4xs) var(--padding-base);
     gap: var(--gap-536xl);
 }
-.choosePageSize {
+.choosePageSize:hover {
     background-color: var(--color-aliceblue);
 }
