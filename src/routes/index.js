@@ -1,19 +1,27 @@
 //Route đưa người dùng tới các trang khi chưa đăng nhập
+import ConfirmPage from "~/Components/CofirmPage";
 import Home from "~/Components/Home";
 import Login from "~/Components/Login";
 import Print from "~/Components/Print";
-import PropertyPage from "~/Components/PropertyPage";
+import SendcodePage from "~/Components/SendcodePage";
 export const publicRoutes = [
-    { path: "/property", component: PropertyPage },
-    { path: "/", component: Home },
-    {
-        path: "/login",
-        component: Login,
-    },
-    {
-        path: "/print",
-        component: Print,
-    },
+  { path: "/", component: Home },
+  {
+    path: "/login",
+    component: Login,
+  },
+  {
+    path: "/print",
+    component: Print,
+  },
+  {
+    path: "/sendcode",
+    component: SendcodePage,
+  },
+  {
+    path: "/confirmPrint",
+    component: ConfirmPage,
+  },
 ];
 
 //Route đưa người dùng tới các trang khi đã đăng nhập
