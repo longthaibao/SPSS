@@ -14,7 +14,7 @@ function Sendcode() {
           </div>
         </div>
         <button className={cx("back")}>
-          <Link to={"/home"} className={cx("bt-link")}>
+          <Link to={"/"} className={cx("bt-link")}>
             TRỞ VỀ TRANG CHỦ
           </Link>
         </button>
