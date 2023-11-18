@@ -4,8 +4,8 @@ import Login from "~/Components/Login";
 import Print from "~/Components/Print";
 import PropertyPage from "~/Components/PropertyPage";
 export const publicRoutes = [
-    { path: "/", component: PropertyPage },
-   /* { path: "/", component: Home },
+    { path: "/property", component: PropertyPage },
+    { path: "/", component: Home },
     {
         path: "/login",
         component: Login,
@@ -13,7 +13,7 @@ export const publicRoutes = [
     {
         path: "/print",
         component: Print,
-    },*/
+    },
 ];
 
 //Route đưa người dùng tới các trang khi đã đăng nhập
