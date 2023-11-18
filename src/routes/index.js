@@ -19,10 +19,6 @@ export const publicRoutes = [
     component: SendcodePage,
   },
   {
-    path: "/home",
-    component: Home,
-  },
-  {
     path: "/confirmPrint",
     component: ConfirmPage,
   },
