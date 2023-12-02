@@ -4,6 +4,7 @@ import Home from "~/Components/Home";
 import Login from "~/Components/Login";
 import Print from "~/Components/Print";
 import SendcodePage from "~/Components/SendcodePage";
+import PropertyPage from "~/Components/PropertyPage";
 export const publicRoutes = [
   { path: "/", component: Home },
   {
@@ -21,6 +22,10 @@ export const publicRoutes = [
   {
     path: "/confirmPrint",
     component: ConfirmPage,
+  },
+  {
+    path: "/property",
+    component: PropertyPage,
   },
 ];
 
