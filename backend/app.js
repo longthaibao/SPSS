@@ -1,20 +1,13 @@
 const express = require("express");
-const app = express();
 const mongoose = require("mongoose");
-app.use(express.json());
 const cors = require("cors");
+const app = express();
+const database = require("./config/database");
+database.connect();
+app.use(express.json());
 app.use(cors());
 app.use("/files", express.static("files"));
-//mongodb connection----------------------------------------------
 
-mongoose
-  .connect("mongodb+srv://root:123@cnpm.hvtewz8.mongodb.net/CNPM?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-  })
-  .then(() => {
-    console.log("Connected to database");
-  })
-  .catch((e) => console.log(e));
 //multer------------------------------------------------------------
 const multer = require("multer");
 
@@ -54,9 +47,9 @@ app.get("/get-files", async (req, res) => {
 
 //apis----------------------------------------------------------------
 app.get("/", async (req, res) => {
-  res.send("Success!!!!!!");
+  res.send("Success!!");
 });
 
-app.listen(5001, () => {
+app.listen(3000, () => {
   console.log("Server Started");
 });
