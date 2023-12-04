@@ -2,6 +2,7 @@ import classNames from "classnames/bind";
 import styles from "./Footer.module.scss";
 import BK from "../images/logoBK.svg";
 import VN from "../images/flagvietnam.svg";
+import { useState, useEffect } from "react";
 const cx = classNames.bind(styles);
 function Footer() {
   return (

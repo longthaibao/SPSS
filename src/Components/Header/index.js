@@ -5,9 +5,11 @@ import SPSSLogo from "~/Components/images/SPSS-logo.svg";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
+import { useEffect } from "react";
 const cx = classNames.bind(styles);
-const isLogin = false;
+
 function Header({ currentPage, username }) {
+  console.log(username);
   return (
     <div className={cx("wrapper")}>
       <div className={cx("page-info")}>
@@ -19,7 +21,7 @@ function Header({ currentPage, username }) {
       </div>
       <div className={cx("user-info")}>
         <div className={cx("pop-up")}>
-          {isLogin ? (
+          {username != "" && username != undefined ? (
             <Popper username={username} />
           ) : (
             <Link className={cx("login")} to={"/login"}>

@@ -1,9 +1,10 @@
 import classNames from "classnames/bind";
 import styles from "./Form.module.scss";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
 const cx = classNames.bind(styles);
 
-function Form() {
+function Form({ isLogin, onLoginChange, handleSetUserName }) {
   const [username, setUserName] = useState("");
   const [password, setPassWord] = useState("");
   const [focusUserName, setFocusUserName] = useState(false);
@@ -14,7 +15,26 @@ function Form() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = new FormData(e.target);
+    const data = {
+      username,
+      password,
+    };
+    axios
+      .post("http://localhost:5001/login/create", data, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then(function (response) {
+        if (response.statusText === "OK") {
+          onLoginChange(true);
+          handleSetUserName(response.data.data.username);
+          // Kiểm tra trạng thái và chuyển hướng
+          window.location.href = "/";
+          console.log(response);
+        }
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
   const handleChangeUserName = (e) => {
     console.log(e.target.value);
@@ -34,7 +54,7 @@ function Form() {
     <div className={cx("wrapper")}>
       <div className={cx("form-login")}>
         <h1 className={cx("title")}>Đăng nhập</h1>
-        <form onSubmit={handleSubmit} className={cx("form")}>
+        <form method="POST" action="/login/create" className={cx("form")}>
           <div className={cx("form-group")}>
             <input
               className={cx("user-name")}
@@ -67,7 +87,9 @@ function Form() {
               Vui lòng nhập trường này
             </span>
           </div>
-          <button className={cx("submit")}>ĐĂNG NHẬP</button>
+          <button type="submit" onClick={handleSubmit} className={cx("submit")}>
+            ĐĂNG NHẬP
+          </button>
         </form>
         <div className={cx("more-option")}>
           <a href="#" className={cx("forgotpass")}>
